@@ -31,7 +31,7 @@ public final class RegisterData {
         return new Object[][]{
                 {getFirstName(),getLastName(),getEmail(),pw,pw,"valid registration","Thank you for registering with Tealium Ecommerce."},
                 {getFirstName(),getLastName(),"evy@co.ul",pw,pw,"invalid email format","\"Email\" is not a valid hostname."},
-                {getFirstName(),getLastName(),"evy@user.co.il","invalid email in use","There is already an account with this email address. If you are sure that it is your email address, "},
+                {getFirstName(),getLastName(),"evy@user.co.il",pw,pw,"invalid email in use","There is already an account with this email address. If you are sure that it is your email address, click here to get your password and access your account."},
                 {getFirstName(),getLastName(),getEmail(),"password123","password","invalid passwords mismatch","Please make sure your passwords match."},
                 {getFirstName(),getLastName(),getEmail(),"pw123","pw123","invalid passwords length","Please enter more characters or clean leading or trailing spaces."}
         };

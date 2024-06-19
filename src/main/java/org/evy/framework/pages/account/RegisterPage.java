@@ -61,12 +61,13 @@ public class RegisterPage extends BasePage {
     }
 
     @Step("Get registration response message for operation: {operation}")
+
     public String getRegistrationResponseMessage(String operation){
         return switch (operation){
             case "valid registration"->getText(successRegistrationMsg,"success registration message");
             case "invalid email format"->getText(invalidEmailErrorsMsg,"invalid email format message");
             case "invalid email in use"->getText(invalidEmailErrorsMsg,"invalid email in use");
-            case "invalid passwords mismatch "->getText(invalidMismatchPasswordsMsg,"invalid mismatch passwords message");
+            case "invalid passwords mismatch"->getText(invalidMismatchPasswordsMsg,"invalid mismatch passwords message");
             case "invalid passwords length"->getText(invalidTooShortPasswordsMsg,"invalid passwords length message");
             default -> throw new IllegalStateException("Unexpected value: " + operation);
         };
