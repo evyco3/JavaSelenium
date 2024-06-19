@@ -9,7 +9,9 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.Wait;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.sql.Driver;
 import java.time.Duration;
 
 public class BasePage {
@@ -59,6 +61,15 @@ public class BasePage {
                 () -> waitForElementToBeVisible(element).getText(),
                 "Retrieved text from " + elementName,
                 "Unable to retrieve text from " + elementName);
+    }
+
+    protected void waitForPageTitleToBeEqualsTo(String pageTitle){
+        ActionUtils.execAction(getClass(),()->
+            new WebDriverWait(WebDriverFactory.getInstance().getDriver(), Duration.ofSeconds(10))
+                    .until(ExpectedConditions.titleIs(pageTitle)),
+        "Page Title: "+pageTitle,
+                "Page Title: "+driver.getTitle()+" Not Equals to "+pageTitle
+        );
     }
 
 
