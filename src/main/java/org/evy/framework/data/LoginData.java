@@ -6,7 +6,7 @@ public final class LoginData {
 
     private LoginData(){}
 
-    @DataProvider(name = "loginData" ,parallel = true)
+    @DataProvider(name = "loginData" )
     public static Object[][]getData(){
         return new Object[][]{
                 {"evy@user.co.il","Password123","valid login","WELCOME"},

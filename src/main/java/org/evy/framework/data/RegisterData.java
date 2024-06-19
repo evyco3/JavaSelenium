@@ -25,7 +25,7 @@ public final class RegisterData {
         return faker.internet().password(7,14,true);
     }
 
-    @DataProvider(name = "registerData",parallel = true)
+    @DataProvider(name = "registerData")
     public static Object[][]getData(){
         String pw=getPassword();
         return new Object[][]{
