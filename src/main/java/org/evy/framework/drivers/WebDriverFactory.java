@@ -1,5 +1,6 @@
 package org.evy.framework.drivers;
 
+import org.evy.framework.config.ConfigManager;
 import org.evy.framework.enums.BrowserType;
 import org.evy.framework.enums.LogType;
 import org.evy.framework.utils.LoggerUtils;
@@ -66,9 +67,9 @@ public final class WebDriverFactory {
 
     private static void configureDriver(WebDriver driver){
         driver.manage().window().maximize();
-        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(10));
-        driver.get("https://ecommerce.tealiumdemo.com/");
+        driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(ConfigManager.get().implicitTime()));
+        driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(ConfigManager.get().pageLoadTime()));
+        driver.get(ConfigManager.get().baseUrl());
     }
 
 
