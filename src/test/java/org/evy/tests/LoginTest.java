@@ -13,6 +13,7 @@ import org.evy.framework.utils.LoggerUtils;
 import org.testng.annotations.Parameters;
 import org.testng.annotations.Test;
 
+import static org.evy.framework.utils.AssertionUtils.assertEquality;
 
 
 /**
@@ -39,9 +40,9 @@ public class LoginTest extends BaseTest{
     @Parameters({"email", "password", "operation", "expectedResult"})
     @Story("User Login Scenarios")
     @Description("Tests user login scenarios with different combinations of email, password, and expected results")
-    public void userLoginScenarios(String email,String password,String operation,String expectedMsg){
+    public void testUserLoginScenarios(String email, String password, String operation, String expectedMsg){
         String actualMsg=performLoginAndGetResponseMessage(email,password,operation);
-        AssertionUtils.assertEquality(actualMsg,expectedMsg,"Verify if ("+actualMsg+") Equals To ("+expectedMsg+")");
+        assertEquality(actualMsg,expectedMsg,"Verify if ("+actualMsg+") Equals To ("+expectedMsg+")");
     }
 
 
