@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="All Test Suite">
+<suite name="mySuit">
     <listeners>
         <listener class-name="org.evy.framework.listeners.ListenerManager"/>
     </listeners>
-    <test name="MasterUIAutomator" parallel="classes" thread-count="5" >
+    <test name="MasterUIAutomator" parallel="classes" >
         <classes>
             <class name="org.evy.tests.LoginTest"/>
             <class name="org.evy.tests.RegisterTest"/>
+            <class name="org.evy.tests.LogoutTest"/>
+            <class name="org.evy.tests.ProductDropdownTest"/>
         </classes>
     </test>
 </suite>
