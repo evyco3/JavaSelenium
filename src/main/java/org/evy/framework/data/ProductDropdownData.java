@@ -13,7 +13,7 @@ public final class ProductDropdownData {
                 {"Men","View All Men","men.html"},
                 {"Men","Shirts","men/shirts"},
                 {"Men","New Arrivals","men/new-arrivals"},
-                {"Men","Tees", "men/tees-knits-and-polos"},
+                {"Men","Tees, Knits and Polos", "men/tees-knits-and-polos"},
                 {"Men","Pants & Denim","men/pants-denim"},
                 {"Men","Blazers","men/blazers"}
         };

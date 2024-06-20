@@ -6,6 +6,7 @@ import org.evy.framework.enums.LogType;
 import org.evy.framework.utils.LoggerUtils;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -63,7 +64,9 @@ public final class BrowserManager {
 
     private static WebDriver getChromeDriver(){
         WebDriverManager.chromedriver().setup();
-        return new ChromeDriver();
+        ChromeOptions options=new ChromeOptions();
+        options.addArguments("headless");
+        return new ChromeDriver(options);
     }
 
     private static WebDriver getFirefoxDriver(){
