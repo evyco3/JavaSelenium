@@ -98,6 +98,16 @@ public class BasePage {
         );
     }
 
+    @Step("Wait for page title to contain '{pageTitle}'")
+    protected void waitForPageTitleToContain(String pageTitle) {
+        ActionUtils.execAction(getClass(), () ->
+                        new WebDriverWait(WebDriverFactory.getInstance().getDriver(), Duration.ofSeconds(10))
+                                .until(ExpectedConditions.titleContains(pageTitle)),
+                "Page Title Contains: " + pageTitle,
+                "Page Title do not contains " + pageTitle
+        );
+    }
+
     @Step("Get current URL")
     public String getCurrentUrl() {
         return ActionUtils.execFunction(getClass(), driver::getCurrentUrl,

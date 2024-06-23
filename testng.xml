@@ -10,6 +10,7 @@
             <class name="org.evy.tests.RegisterTest"/>
             <class name="org.evy.tests.LogoutTest"/>
             <class name="org.evy.tests.ProductDropdownTest"/>
+            <class name="org.evy.tests.SelectProductTest"/>
         </classes>
     </test>
 </suite>
