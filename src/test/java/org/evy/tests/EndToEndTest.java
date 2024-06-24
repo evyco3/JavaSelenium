@@ -8,6 +8,7 @@ import io.qameta.allure.Step;
 import io.qameta.allure.Story;
 import org.evy.framework.enums.LogType;
 import org.evy.framework.pages.HomePage;
+import org.evy.framework.utils.AssertionUtils;
 import org.evy.framework.utils.LoggerUtils;
 import org.testng.annotations.Test;
 
@@ -32,8 +33,8 @@ public class EndToEndTest extends BaseTest {
     @Story("Complete User Journey")
     @Description("Performs an end-to-end user journey including registration, product selection, and order placement")
     public void testUserPerformEndToEnd() {
-        String message = performEndToEnd();
-        System.out.println(message);
+        String actualResponseMessage = performEndToEnd();
+        AssertionUtils.assertEquality(actualResponseMessage,"THANK YOU FOR YOUR PURCHASE!","Verify if actual message equals to expected message");
     }
 
     @Step("Perform end-to-end user journey")
@@ -51,7 +52,7 @@ public class EndToEndTest extends BaseTest {
                     .selectProductFromDropdown("Men", "Shirts")
                     .selectProductByName("Plaid Cotton Shirt")
                     .selectProductColor("Charcoal")
-                    .selectProductSize("S")
+                    .selectProductSize("s")
                     .selectProductQuantity("2")
                     .clickAddToCartButton()
                     .proceedToCheckoutPage()
