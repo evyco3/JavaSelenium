@@ -12,6 +12,8 @@ import org.evy.framework.utils.AssertionUtils;
 import org.evy.framework.utils.LoggerUtils;
 import org.testng.annotations.Test;
 
+import static org.evy.framework.utils.AssertionUtils.assertEquality;
+
 /**
  * The {@code EndToEndTest} class contains test methods for performing an end-to-end user journey.
  * This class uses TestNG for test execution and Allure annotations for detailed reporting.
@@ -34,7 +36,7 @@ public class EndToEndTest extends BaseTest {
     @Description("Performs an end-to-end user journey including registration, product selection, and order placement")
     public void testUserPerformEndToEnd() {
         String actualResponseMessage = performEndToEnd();
-        AssertionUtils.assertEquality(actualResponseMessage,"THANK YOU FOR YOUR PURCHASE!","Verify if actual message equals to expected message");
+        assertEquality(actualResponseMessage,"THANK YOU FOR YOUR PURCHASE!","Verify if actual message equals to expected message");
     }
 
     @Step("Perform end-to-end user journey")
