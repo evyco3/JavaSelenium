@@ -8,10 +8,7 @@ import org.evy.framework.utils.LoggerUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.FluentWait;
-import org.openqa.selenium.support.ui.Wait;
-import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.support.ui.*;
 
 import java.time.Duration;
 /**
@@ -61,8 +58,10 @@ public class BasePage {
 
     @Step("Send keys '{value}' to element '{elementName}'")
     protected void sendKeys(WebElement element, String value, String elementName) {
-        ActionUtils.execAction(getClass(), () ->
-                        waitForElementToBeVisible(element).sendKeys(value),
+        ActionUtils.execAction(getClass(), () -> {
+                    waitForElementToBeVisible(element).clear();
+                    waitForElementToBeVisible(element).sendKeys(value);
+                },
                 "Sent keys to " + elementName + ": " + value,
                 "Failed to send keys to " + elementName
         );
@@ -124,6 +123,14 @@ public class BasePage {
                 },
                 "Move to " + elementName,
                 "Failed to move to " + elementName
+        );
+    }
+
+    protected void selectByVisibleText(WebElement element,String value,String elementName){
+        ActionUtils.execAction(getClass(),()->
+            new Select(element).selectByVisibleText(value),
+            "Selected "+elementName+" from dropdown",
+                "Failed to select "+elementName+" from dropdown"
         );
     }
 }

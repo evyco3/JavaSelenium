@@ -47,7 +47,7 @@ public class RegisterPage extends BasePage {
             click(registerBtn,"registration button");
 
             if(criteria){
-                waitForPageTitleToBeEqualsTo("Tealium Ecommerce Demo");
+                waitForPageTitleToBeEqualsTo("My Account");
                 LoggerUtils.log(getClass(), LogType.INFO,"Success Registration Moving to HomePage");
             }
 

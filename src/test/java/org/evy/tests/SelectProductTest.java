@@ -16,8 +16,6 @@ import static org.evy.framework.utils.AssertionUtils.assertContains;
 
 /**
  * The {@code SelectProductTest} class contains test methods for verifying product selection functionality.
- * This class uses TestNG for test execution and Allure annotations for detailed reporting.
-
  * <p>user lands at homePage ->select product categories from productDropdown->moving to productListingPage select product By Name
  *
  * @see BaseTest

@@ -11,6 +11,8 @@
             <class name="org.evy.tests.LogoutTest"/>
             <class name="org.evy.tests.ProductDropdownTest"/>
             <class name="org.evy.tests.SelectProductTest"/>
+            <class name="org.evy.tests.ProductPageTest"/>
+            <class name="org.evy.tests.EndToEndTest"/>
         </classes>
     </test>
 </suite>
