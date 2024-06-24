@@ -28,9 +28,5 @@ This repository contains an automated test suite designed for testing an e-comme
 3. Update configuration files (`config.properties`) with appropriate settings.
 4. Run tests using Maven commands (`mvn clean test`) or directly from the IDE.
 
-## Future Enhancements
-- **Enhanced Test Coverage**: Expand test coverage to include additional edge cases, boundary conditions, and validations to ensure comprehensive testing of the e-commerce application.
-- **CI/CD Integration with Jenkins**: Integrate the automated test suite with Jenkins for continuous integration and deployment. Configure Jenkins pipelines to automate test execution, generate reports, and notify stakeholders on build status.
-- **Improved Error Handling**: Implement robust error handling mechanisms to gracefully manage unexpected failures during test execution. Enhance logging and reporting capabilities to provide detailed insights into test failures.
-- **Retry Mechanisms**: Implement retry mechanisms for flaky tests to improve test stability and reliability, ensuring consistent test results across different environments.
+
 
